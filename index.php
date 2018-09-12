@@ -29,11 +29,10 @@ try {
         $stmt->execute();
         $result = $stmt->fetchall();
         foreach($result as $database) {
-           
-            echo '<a href="http://localhost/backuptool/db.php?dbname='.$database[0].'">'.$database[0].'</a> <br /><br />';
+            echo  '<a href="http://localhost/backuptool/db.php?dbname='.$database[0].'" class=“waves-effect waves-light btn”>'.$database[0].'</a> <br /><br />';
+        
         }
-
-    }
+        }
 catch(PDOException $e)
     {
     echo "Error: " . $e->getMessage();
