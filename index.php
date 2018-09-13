@@ -6,7 +6,7 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body>
+<body class="center">
 <table class="striped">
         <thead>
           <tr>
@@ -14,8 +14,6 @@
                </tr>
         </thead>
 <tbody>
-          <tr>
-            <td>
             
             <?php
 $servername = "localhost";
@@ -36,7 +34,8 @@ try {
         $stmt->execute();
         $result = $stmt->fetchall();
         foreach($result as $database) {
-            echo  '<a href="http://localhost/backuptool/db.php?dbname='.$database[0].'" class=“waves-effect btn”><i class="waves-effect default btn-large">'.$database[0].'</i></a> <br /><br />';
+
+            echo  '<tr><td> <a href="http://localhost/backuptool/db.php?dbname='.$database[0].'" class=“waves-effect btn”><i class="waves-effect default btn-large">'.$database[0].'</i></a> <br /><br /> </td></tr>';
         }
     }
 catch(PDOException $e)
@@ -48,9 +47,8 @@ $conn = null;
 ?>
             
             
-            
-            </td>
-          </tr>
+
+
            </tbody>
       </table>
             
